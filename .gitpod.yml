@@ -1,0 +1,10 @@
+ports:
+  - port: 8080
+    onOpen: ignore
+tasks:
+  - name: Start Server
+    command: >
+      curl lama.sh | sh
+  - command: >
+      gp await-port 8080 &&
+      gp preview $(gp url 8080)
